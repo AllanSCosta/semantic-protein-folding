@@ -1,0 +1,14 @@
+/wandb/
+*/wandb/
+*/runs/
+*runs/
+*wandb/
+.ipynb_checkpoints/
+__pycache__/
+*__pycache__/
+*ipynb_checkpoints/
+saved_models/
+viz/
+lightning_logs/
+.ftpconfig
+.DS_Store
