@@ -21,7 +21,7 @@ This repository stands on shoulders of giant work by the scientific community:
 For experimental and prototypical access to internal code, these repos are collected under `building_blocks` (except sidechainnet). As development progresses they will be incorporated as original `imports`.
 
 
-### Experimental Arguments
+## Experimentation Arguments
 
 #### General
 - `debug`: whether to use wandb logging
@@ -39,7 +39,7 @@ For experimental and prototypical access to internal code, these repos are colle
 - `batch_size`: batch size
 
 
-#### Architecture
+### Architecture
 
 - `wipe_edge_information`: drops out all hij
 - `topography_giveaway`: instead of providing language-model-based hij, produces hij based on ground truth distance and orientation
@@ -55,17 +55,17 @@ For experimental and prototypical access to internal code, these repos are colle
 - `use_gt`: project 3D coordinates with Graph Transformer after distillation
 - `use_en`: refine with E(n)-Transformer given coords
 
-#### ESM-MSA-1 DISTILLATION
-node_msa_distill_layers [768, 256, 256, 128]
-edge_msa_distill_layers', nargs='+', type=int, default=[96, 64, 64])
+#### ESM-MSA-1 Distillation
+- `node_msa_distill_layers`: hidden layer enumeration of Dense for msa node information extraction [768, 256, 256, 128]
+- `edge_msa_distill_layers`: hidden layer enumeration of Dense for msa edge information extraction [96, 64, 64]
 
-#### ESM-1B DISTILLATION
-node_seq_distill_layers', nargs='+', type=int, default=[1280, 256, 128])
-edge_seq_distill_layers', nargs='+', type=int, default=[160, 64, 64])
+#### ESM-1B Distillation
+- `node_seq_distill_layers`: hidden layer enumeration of Dense for msa node information extraction [1280, 256, 128]
+- `edge_seq_distill_layers`: hidden layer enumeration of Dense for msa edge information extraction [160, 64, 64]
 
-#### ENSEMBLE
-node_ens_distill_layers', nargs='+', type=int, default=[128, 128, 128])
-edge_ens_distill_layers', nargs='+', type=int, default=[64, 64])
+#### Seq + MSA ensemble
+- `node_ens_distill_layers`: hidden layer enumeration of Dense for msa node information extraction [128, 128, 128]
+- `edge_ens_distill_layers`: hidden layer enumeration of Dense for msa edge information extraction [64, 64]
 
 #### AXIAL TRANSFORMER
 at_checkpoint',type=int, default=0)
@@ -100,8 +100,6 @@ en_num_seq_neighbors', type=int, default=64)
 unroll_steps', type=int, default=10)
 train_fold_steps', type=int, default=1)
 eval_fold_steps', type=int, default=60)
-
-
 
 #### PREDICTIONS
 angle_number_of_bins', type=int, default=16)
