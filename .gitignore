@@ -12,3 +12,4 @@ viz/
 lightning_logs/
 .ftpconfig
 .DS_Store
+img/
