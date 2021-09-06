@@ -21,7 +21,10 @@ This repository stands on shoulders of giant work by the scientific community:
 For experimental and prototypical access to internal code, these repos are collected under `building_blocks` (except sidechainnet). As development progresses they will be incorporated as original `imports`.
 
 
-## Experimentation Arguments
+## Experimentation Pipeline 
+
+<img src="https://github.com/AllanSCosta/semantic-protein-folding/blob/main/img/full_pipeline.png" width="900" height="500" />
+
 
 #### General
 - `debug`: whether to use wandb logging
