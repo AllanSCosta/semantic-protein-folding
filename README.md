@@ -31,7 +31,7 @@ For experimental and prototypical access to internal code, these repos are colle
 - `report_frequency`: how often to log metrics in log file
 
 #### Data
-- `dataset_source`: path to sidechainnet
+- `dataset_source`: path to sidechainnet-formatted dataset
 - `downsample`: whether to uniformly at random downsample dataset
 - `seq_clamp`: clamp data at the sequence level, size of clamp
 - `max_seq_len`: throw out data with sequences larger than max_seq_len
@@ -41,19 +41,19 @@ For experimental and prototypical access to internal code, these repos are colle
 
 #### Architecture
 
-topography_giveaway:
-wipe_edge_information:
-giveaway_distance_resolution:
-giveaway_angle_resolution:
+- `wipe_edge_information`: drops out all hij
+- `topography_giveaway`: instead of providing language-model-based hij, produces hij based on ground truth distance and orientation
+- `giveaway_distance_resolution`: number of bins of relative distance information to input
+- `giveaway_angle_resolution`: number of bins of relative orientation information to input
 
-wiring_checkpoint:
+- `wiring_checkpoint`: checkpoint model-inbetween Dense networks 
 
-use_msa
-use_seq
+- `use_msa`: use ESM-MSA-1 embeddings
+- `use_seq`: use ESM-1b embeddings
 
-use_at
-use_gt
-use_en
+- `use_at`: process hij with an Axial Transformer after distillation
+- `use_gt`: project 3D coordinates with Graph Transformer after distillation
+- `use_en`: refine with E(n)-Transformer given coords
 
 #### ESM-MSA-1 DISTILLATION
 node_msa_distill_layers [768, 256, 256, 128]
