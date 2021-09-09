@@ -100,33 +100,34 @@ For experimental and prototypical access to internal code, these repos are colle
 
 
 #### FOLDING STEPS
-unroll_steps', type=int, default=10)
-train_fold_steps', type=int, default=1)
-eval_fold_steps', type=int, default=60)
+- `unroll_steps` - during training, applies en transformer without gradients up to N, where N ~ U(0, unroll_steps) and each batch gets a different sample
+- `train_fold_steps` - during training, how many en transformer iterations to perform with gradients
+- `eval_fold_steps` - during testing, how many en trasnformer iterations to perform
 
 #### PREDICTIONS
-angle_number_of_bins', type=int, default=16)
-distance_number_of_bins', type=int, default=24)
-distance_max_radius', type=float, default=24)
+- `angle_number_of_bins` - number of bins to use for predicting relative orientations
+- `distance_number_of_bins` - number of bins to use for predicting relative distances
+- `distance_max_radius` - maximum radius for predicitng relative distances
 
 #### OPTIM
-lr', type=float, default=1e-4)
+- `lr`: learning rate
+- `at_loss_coeff`: axial transformer loss coefficient
+- `gt_loss_coeff`: graph transformer loss coefficient
+- `et_loss_coeff`: en transformer loss coefficient
 
-at_loss_coeff', type=float, default=30.0)
-gt_loss_coeff', type=float, default=5.0)
-et_loss_coeff', type=float, default=10.0)
+- `et_drmsd`: use drmsd for en transformer
 
-et_drmsd', type=int, default=0)
-
-max_epochs', type=int, default=10)
-validation_check_rate', type=int, default=10)
-validation_start', type=int, default=20)
+- `max_epochs`: number of epochs
+- `validation_check_rate`: how often to perform validation checks
+- `validation_start`: when to start validating
 
 
 #### STOCHASTICITY
-coordinate_reset_prob', type=float, default=0.3)
-msa_wipe_out_prob', type=float, default=0.8)
-msa_wipe_out_dropout', type=float, default=0.1)
+- `coordinate_reset_prob`: legacy, will be removed
+- `msa_wipe_out_prob`: probability of selecting MSA embeddings 
+- `msa_wipe_out_dropout`: dropout of edge and node information for selected MSA embeddings
 
-test_model', type=str, default='-')
-retrain_model', type=str, default='-')
+
+### Test, Retrain
+- `test_model`: path to model weights for testing
+- `retrain_model`: path to model weights for retraining
