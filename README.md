@@ -71,32 +71,32 @@ For experimental and prototypical access to internal code, these repos are colle
 - `edge_ens_distill_layers`: hidden layer enumeration of Dense for msa edge information extraction [64, 64]
 
 #### AXIAL TRANSFORMER
-at_checkpoint',type=int, default=0)
-at_dim', type=int, default=32)
-at_depth',type=int, default=3)
-at_heads',type=int, default=1)
-at_dim_head',type=int, default=32)
-at_window_size', type=int, default=64)
+- `at_checkpoint`: if the axial transformer should be checkpointed
+- `at_dim`: axial transformer dim
+- `at_depth`: axial transformer depth
+- `at_heads`: axial transformer number of attention heads
+- `at_dim_head`: axial transformer dim head
+- `at_window_size`: axial transformer window size (for internal Long-Short optimization)
 
 #### GRAPH TRANSFORMER
-gt_checkpoint',type=int, default=1)
-gt_dim', type=int, default=64)
-gt_edim', type=int, default=32)
-gt_depth',type=int, default=3)
-gt_heads',type=int, default=1)
-gt_dim_head',type=int, default=64)
+- `gt_checkpoint`: graph transformer checkpoint
+- `gt_dim`: graph transformer dim
+- `gt_edim`: graph transformer edge dim
+- `gt_depth`: graph transformer depth
+- `gt_heads`: graph transformer number of heads
+- `gt_dim_head`: graph trnasformer dim head
 
 #### EN TRANSFORMER
-gaussian_noise', type=float, default=10)
-et_checkpoint',type=int, default=0)
-et_dim', type=int, default=64)
-et_edim', type=int, default=32)
-et_depth',type=int, default=3)
-et_heads',type=int, default=4)
-et_dim_head',type=int, default=64)
-et_coors_hidden_dim',type=int, default=64)
-en_num_neighbors', type=int, default=0)
-en_num_seq_neighbors', type=int, default=64)
+- `gaussian_noise`: if graph transformer is not used, which gaussian noise to be added to backbone as starting point
+- `et_checkpoint`: checkpoint en transformer
+- `et_dim`: dim of en transformer
+- `et_edim`: en transformer edge dim
+- `et_depth`: en transformer depth
+- `et_heads`: en transformer num heads
+- `et_dim_head`: en transformer dim head
+- `et_coors_hidden_dim`: hidden dim of internal coordinate-head mixer 
+- `en_num_neighbors`: num neighbors to consider in 3d space
+- `en_num_seq_neighbors`: num neighbors to consider in sequence space
 
 
 #### FOLDING STEPS
