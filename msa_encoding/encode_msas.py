@@ -104,7 +104,6 @@ if __name__ == '__main__':
     chunks = np.array_split(names, n_splits)
     names = chunks[split]
 
-    print('Aight baby we are loading the MSA Transformer')
     msa_transformer, msa_alphabet = esm.pretrained.esm_msa1_t12_100M_UR50S()
     msa_transformer = msa_transformer.eval()
     if not args.no_cuda: msa_transformer = msa_transformer.cuda()
