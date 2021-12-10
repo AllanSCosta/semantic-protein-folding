@@ -6,7 +6,7 @@
 ## A pipeline for Protein Language Modeling + Protein Folding experimentation
 
 
-Based on [Distillation of MSA Embeddings to Protein Folded Structures](https://www.biorxiv.org/content/10.1101/2021.06.02.446809v1.full.pdf).
+Based on Distillation of MSA Embeddings to Protein Folded Structures ([biorxiv preprint](https://www.biorxiv.org/content/10.1101/2021.06.02.446809v1.full.pdf) and [full latest text](https://www.media.mit.edu/publications/distillation-of-language-model-semantics-to-folded-three-dimensional-protein-structures/)).
 
 This repository stands on shoulders of giant work by the scientific community:
 
